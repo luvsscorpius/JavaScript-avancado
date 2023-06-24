@@ -12,8 +12,8 @@ class Pessoa {
 
 const pessoa1 = new Pessoa('And', 19)
 const pessoa2 = new Pessoa('Maria', 50)
-//pessoa1.apresentar()
-//pessoa2.apresentar()
+pessoa1.apresentar()
+pessoa2.apresentar()
 
 //As classes em JavaScript também podem ter herança, onde uma classe pode estender outra classe para herdar suas propriedades e métodos. Isso é feito usando a palavra extends . Por exemplo
 
