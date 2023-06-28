@@ -1,0 +1,11 @@
+.numero {
+    font-size: larger;
+}
+
+.ok {
+    color: rgb(128, 129, 128);
+}
+
+.erro {
+    color: #f00;
+}
