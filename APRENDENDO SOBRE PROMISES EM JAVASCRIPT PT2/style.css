@@ -1,0 +1,15 @@
+.numero {
+    font-size: larger;
+}
+
+.ok {
+    color: rgb(12, 236, 12);
+}
+
+.erro {
+    color: #f00;
+}
+
+#btn_promise {
+    cursor: pointer;
+}
