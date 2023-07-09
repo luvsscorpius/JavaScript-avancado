@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APRENDENDO SOBRE DATA E HORA EM JAVASCRIPT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="timer" id="timer">
+            <div id="divData"></div>
+            <div id="divRelogio">00:00:00</div>
+            <div class="defAlarme" id="defAlarme">
+                <label id="horaAlarme">Hora do Alarme:</label>
+                <label id="label">Tempo do Alarme (segundos)</label>
+                <br>
+                <input type="number" id="tmpAlarme" value="0" min="0">
+            </div>
+            <div class="comandos" id="comandos">
+                <button id="btnAtivar">Ativar</button>
+                <button id="btnParar">Parar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
