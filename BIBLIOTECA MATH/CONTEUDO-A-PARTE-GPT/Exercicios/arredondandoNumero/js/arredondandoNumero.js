@@ -7,12 +7,8 @@ const answer = document.querySelector('#answer')
 const arredondar = () => {
     btnArredondar.addEventListener('click', () => {
         console.log('Arredondei')
-        if (arredondando.value == 0) {
-            answer.innerHTML = "Preencha o campo corretamente antes de continuar"
-        } else {
-            const result = Math.floor(arredondando.value)
-            answer.innerHTML = `O número inteiro: ${result}`
-        }
+        const result = Math.floor(Math.random() * 101)
+        answer.innerHTML = `O número gerado: ${result}`
     })
 }
 
