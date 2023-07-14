@@ -24,10 +24,18 @@
 
     <section>
         <div class="container" id="container">
-            <div class="container-items"></div>
-            <div class="container-answer"></div>
+            <div class="container-items">
+                <h1>Informe um número negativo para descobrir seu valor absoluto:</h1>
+                <input type="number" name="valor" id="valor" class="valor" placeholder="Número" autocomplete="off">
+                <button type="submit" class="btnValor" id="btnValor"><span>Descobrir</span></button>
+            </div>
+            <div class="container-answer">
+                <h2 class="answer" id="answer">O valor absoluto de 0 é: 0</h2>
+            </div>
         </div>
     </section>
+
+    <script src="js/valorAbsoluto.js"></script>
 </body>
 
 </html>
