@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.0.0...v1.0.1) (2023-07-16)
+
+
+### Bug Fixes
+
+* **.env deleted:** folder .env deleted ([68bf0e7](https://github.com/luvsscorpius/JavaScript-avancado/commit/68bf0e7d7609a9467b85f91ef3db1146680d9f4e))
+
 # 1.0.0 (2023-07-16)
 
 
