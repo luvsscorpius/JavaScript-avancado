@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.0.1...v1.1.0) (2023-07-16)
+
+
+### Features
+
+* **added class bola:** added class bola ([175a235](https://github.com/luvsscorpius/JavaScript-avancado/commit/175a235c7afa86feccec26f757b5049a73f21c98))
+
 ## [1.0.1](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.0.0...v1.0.1) (2023-07-16)
 
 
