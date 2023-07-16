@@ -39,5 +39,13 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
