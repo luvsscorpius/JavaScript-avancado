@@ -1,15 +1,13 @@
 {
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "semantic-release": "^21.0.7"
   },
   "scripts": {
-    "cz": "git-cz",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "build": "node esbuild.cjs"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "dependencies": {
+    "esbuild": "^0.18.13"
   }
 }
