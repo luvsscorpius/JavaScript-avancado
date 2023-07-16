@@ -3,6 +3,7 @@
     "cz-conventional-changelog": "^3.3.0"
   },
   "scripts": {
+    "cz": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
   },
