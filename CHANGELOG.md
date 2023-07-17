@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.1.0...v1.2.0) (2023-07-17)
+
+
+### Features
+
+* **updated class bola:** finishing the project by updating the class Bola ([0ee9aa3](https://github.com/luvsscorpius/JavaScript-avancado/commit/0ee9aa35fa0bdc1be43119fb04d0f46fb556f947))
+
 # [1.1.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.0.1...v1.1.0) (2023-07-16)
 
 
