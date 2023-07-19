@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.4.0...v1.5.0) (2023-07-19)
+
+
+### Features
+
+* **javascript pdf:** how to create a PDF with JavaScript ([0d60004](https://github.com/luvsscorpius/JavaScript-avancado/commit/0d60004658ec87aa9ed64b5d50dc7a7301f7df22))
+
 # [1.4.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.3.0...v1.4.0) (2023-07-19)
 
 
