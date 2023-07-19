@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.3.0...v1.4.0) (2023-07-19)
+
+
+### Features
+
+* **dialog boxes:** dialog Boxes: Alert, Confirm, Prompt ([637306a](https://github.com/luvsscorpius/JavaScript-avancado/commit/637306a3932f6ff6b5ec3ee3d8f70bd7c1c2e191))
+
 # [1.3.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.2.0...v1.3.0) (2023-07-19)
 
 
