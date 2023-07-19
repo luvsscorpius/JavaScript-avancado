@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.2.0...v1.3.0) (2023-07-19)
+
+
+### Features
+
+* **javascript history:** moving to a specific point in JavaScript History ([6dc4827](https://github.com/luvsscorpius/JavaScript-avancado/commit/6dc4827954d6dae2fa64baa7af9d721bc6a1d3b6))
+
 # [1.2.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.1.0...v1.2.0) (2023-07-17)
 
 
