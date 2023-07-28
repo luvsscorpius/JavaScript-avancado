@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.5.0...v1.6.0) (2023-07-28)
+
+
+### Features
+
+* **objetos literais added:** objetos literais added ([db6a8aa](https://github.com/luvsscorpius/JavaScript-avancado/commit/db6a8aaf57d66444c9bba90d8efa46b3134a8433))
+
 # [1.5.0](https://github.com/luvsscorpius/JavaScript-avancado/compare/v1.4.0...v1.5.0) (2023-07-19)
 
 
