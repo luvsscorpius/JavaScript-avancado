@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.row button {
+    width: 90%;
+}
+
+.objetos {
+    margin: 10px auto;
+    background-color: #eee;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+.containerUsuario {
+    background-color: #ddd;
+    width: 50%;
+    text-align: center;
+    border: 1px solid #000;
+    margin: 10px;
+}
