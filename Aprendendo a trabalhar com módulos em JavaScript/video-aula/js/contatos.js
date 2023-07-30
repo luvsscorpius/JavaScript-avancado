@@ -48,8 +48,33 @@ class Contato {
             div.appendChild(pEmail)
 
             destinoDOM.appendChild(div)
+
+            const span = document.createElement('span')
+            span.classList.add('fa-regular', 'fa-trash-can')
+            span.setAttribute('id', 'lixeira')
+            span.style.cursor = 'pointer'
+
+            div.appendChild(span)
+
+            span.addEventListener('click', () => {
+                
+                const contatoEspecifico = contatos.indexOf(contato)
+
+                if (contatoEspecifico !== -1) {
+                    contatos.splice(contatoEspecifico, 1); // Remover o contato pelo índice encontrado
+                }
+
+                console.log(contatos)
+
+                destinoDOM.removeChild(div)
+            })
         })
     }
+
+    static excluirContato() {
+
+    }
 }
+
 
 export default Contato

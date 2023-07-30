@@ -11,6 +11,8 @@ btn_gravar.addEventListener('click', () => {
         email: document.querySelector('#f_email').value
     }
     c.addContato(cont, listaContatos)
-    console.log(c.getTodosContatos())
+    // console.log(c.getTodosContatos())
 })
+
+c.excluirContato()
 
