@@ -24,6 +24,9 @@ class Contato {
 
         contatos.push(cont)
 
+        // Sempre que adicionar um novo contato eu limpo a div para que não duplique
+        destinoDOM.innerHTML = ""
+
         contatos.forEach((contato) => {
 
             const div = document.createElement('div')
