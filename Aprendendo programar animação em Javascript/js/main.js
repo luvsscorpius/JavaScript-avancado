@@ -1,30 +1,21 @@
 const carro = document.querySelector('#carro')
-const btnDireita = document.querySelector('#btnDireita')
-const btnEsquerda = document.querySelector('#btnEsquerda')
+const btnRodar = document.querySelector('#btnRodar')
 const btnPàrar = document.querySelector('#btnPàrar')
 
 const init = () => {
     carro.style.position = 'relative'
     carro.style.left = '0px'
     carro.style.width = '100px'
+    carro.style.height = '40px'
+    tamMax = window.innerWidth - tamCarro
 }
 
 let anima = null
 
 window.addEventListener('load', init)
 
-btnDireita.addEventListener('click', () => {
-    // clearInterval(anima)
-    // anima = setInterval(mover, 20, 1)
-    clearTimeout(anima)
-    mover(1)
-})
-
-btnEsquerda.addEventListener('click', () => {
-    // clearInterval(anima)
-    // anima = setInterval(mover, 20, -1)
-    clearTimeout(anima)
-    mover(-1)
+btnRodar.addEventListener('click', () => {
+    mover()
 })
 
 btnPàrar.addEventListener('click', () => {
@@ -32,25 +23,20 @@ btnPàrar.addEventListener('click', () => {
     clearTimeout(anima)
 })
 
-const mover = (dir) => {
-    if (dir > 0) {
-        if (parseInt(carro.style.left) <= tamMax) {
-            carro.style.left = parseInt(carro.style.left) + (10 * dir) + "px"
-            anima = setTimeout(mover, 20, dir)
-        } else {
-            clearTimeout(anima)
-        }
-    } else if (dir < 0) {
-        if (parseInt(carro.style.left) >= 0) {
-            carro.style.left = parseInt(carro.style.left) + (10 * dir) + "px"
-            anima = setTimeout(mover, 20, dir)
-        } else {
-            clearTimeout(anima)
-        }
+const mover = () => {
+    if (parseInt(carro.style.left) >= tamMax) {
+        dir = -1
+    } else if (parseInt(carro.style.left) <= 0) {
+        dir = 1
     }
+    carro.style.left = parseInt(carro.style.left) + (10 * dir) + 'px'
+    anima = setTimeout(mover, 20)
 }
 
 let tamMax = window.innerWidth - parseInt(carro.style.width)
 window.addEventListener('resize', () => {
     tamMax = window.innerWidth - parseInt(carro.style.width)
 })
+
+let tamCarro = null
+let dir = 0
