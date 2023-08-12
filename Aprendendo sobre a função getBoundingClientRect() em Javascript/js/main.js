@@ -21,5 +21,6 @@ q2.addEventListener('click', (e) => {
     info(e.target)
 })
 
-
+q1.accessKey = "b"
+q2.accessKey = "n"
 
