@@ -5,11 +5,16 @@ const f_msg = document.querySelector('#f_msg')
 
 btn_validar.addEventListener('click', (e) => {
     e.preventDefault()
-    let msg = null
+    let status = f_nota.validity
 
-    if (!f_nota.checkValidity()) {
-        msg = f_nota.validationMessage
+    if (status.valueMissing) {
+        f_nota.setCustomValidity("Poxa, este campo é obrigatório") // setCustomValidity customiza o texto da validação
+    } else if (status.rangeOverflow) {
+        f_nota.setCustomValidity("Nossa, que nota alta você digitou")
+    } else if (status.rangeUnderflow) {
+        f_nota.setCustomValidity("Nossa, que nota baixa você digitou")
     }
 
-    f_msg.innerHTML = msg
+    f_nota.reportValidity()
+    f_msg.innerHTML = f_nota.validationMessage
 })
