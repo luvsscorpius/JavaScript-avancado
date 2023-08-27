@@ -16,10 +16,10 @@
     <script>
         const ctx = document.getElementById('grafico1');
 
-        let labelsX = ['Brazil', 'USA', 'Africa', 'Japan']
-        let valores = [40, 20, 30, 40]
+        let labelsX = ['Disponibilidade', 'Qualidade', 'Performance']
+        let valores = [0, 0, 0]
 
-        new Chart(ctx, {
+        let grafico1 = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labelsX,
@@ -37,6 +37,24 @@
                 }
             }
         });
+
+        const obterDados = () => {
+            const endPoint = "https://aula128-cfbcursos.luvsscorpius.repl.co/"
+            fetch(endPoint)
+                .then(res => res.json())
+                .then(res => {
+                    valores[0] = res.disponibilidade
+                    valores[1] = res.qualidade
+                    valores[2] = res.performance
+                    grafico1.update()
+                })
+                .catch(erro => {
+                    console.log("Erro: " + erro)
+                })
+        }
+
+        let inverval = setInterval(obterDados, 3000)
+
     </script>
 </body>
 
