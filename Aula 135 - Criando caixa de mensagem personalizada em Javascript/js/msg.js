@@ -32,12 +32,13 @@ class Cxmsg {
         const areaCXmsg = document.createElement("div")
         const style_areaCxmsg = "display: flex;" +
             "justify-content: flex-start;" +
-            "align-items: flex-start" +
+            "align-items: flex-start;" +
             "flex-direction: column;" +
             "width: 300px;"
         areaCXmsg.setAttribute("style", style_areaCxmsg)
         this.divmsg.appendChild(areaCXmsg)
 
+        // Título
         const tituloCxmsg = document.createElement("div")
         const style_tituloCxmsg = "display: flex;" +
             "justify-content: flex-start;" +
@@ -51,9 +52,52 @@ class Cxmsg {
         tituloCxmsg.innerHTML = this.titulo
         areaCXmsg.appendChild(tituloCxmsg)
 
+        // Corpo
+        const corpoCxmsg = document.createElement("div")
+        const style_corpoCxmsg = "display: flex;" +
+            "justify-content: flex-start;" +
+            "align-items: center;" +
+            "width: 100%;" +
+            "background-color: #eee;" +
+            "color: #000;" +
+            "padding:30px 5px;"
+        corpoCxmsg.setAttribute("style", style_corpoCxmsg)
+        corpoCxmsg.innerHTML = this.texto
+        areaCXmsg.appendChild(corpoCxmsg)
+
+        // Rodapé
+        const rodape = document.createElement("div")
+        const style_rodape = "display: flex;" +
+            "justify-content: space-around;" +
+            "align-items: center;" +
+            "width: 100%;" +
+            "background-color: #ccc;" +
+            "color: #000;" +
+            "padding: 5px;" +
+            "border-radius: 0px 0px 5px 5px;"
+        rodape.setAttribute("style", style_rodape)
+        areaCXmsg.appendChild(rodape)
+
+        const btn_ok = document.createElement("button")
+        const style_btnOk =
+            "background-color: " + this.cor + "; " +
+            "color: #fff;" +
+            "padding: 10px 50px;" +
+            "border-radius: 5px;" +
+            "cursor: pointer; " +
+            "text-transform: uppercase;" +
+            "border: none;"
+
+        btn_ok.innerHTML = "ok"
+        btn_ok.setAttribute("style", style_btnOk)
+        rodape.appendChild(btn_ok)
+
+        btn_ok.addEventListener('click', (e) => {
+            this.ocultar()
+        })
     }
 
     ocultar = () => {
-
+        this.divmsg.remove()
     }
 }
