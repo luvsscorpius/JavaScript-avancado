@@ -8,14 +8,19 @@ class login {
         cor: '048',
         img: './logo.png'
     }
+    static callback_ok = null
+    static callback_notok = null
     static endPoint = "https://loginv1.luvsscorpius.repl.co/"
     //https://loginv1.luvsscorpius.repl.co/?matricula=123&senha=321
 
 
-    static login = (config = null) => {
+    static login = (callback_ok, callback_notok, config = null) => {
         if (config != null) {
             this.config = config
         }
+
+        this.callback_ok = () => { callback_ok() }
+        this.callback_notok = () => { callback_notok() }
 
         this.styleCSS =
             ".fundoLogin {display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.75); box-sizing: border-box; }" +
@@ -138,21 +143,16 @@ class login {
                     this.matlogado = mat;
                     this.nomelogado = res.nome;
                     this.acessologado = res.acesso;
+                    this.callback_ok()
                     this.fechar()
                 } else {
                     this.logado = false
                     this.matlogado = null;
                     this.nomelogado = null;
                     this.acessologado = null;
-                    alert("Login não efetuado! Username ou Senha inválidos.")
+                    this.callback_notok()
                 }
             })
-
-        // if (mat == "123" && pass == "321") {
-        //     return true
-        // } else {
-        //     return false
-        // }
     }
 }
 

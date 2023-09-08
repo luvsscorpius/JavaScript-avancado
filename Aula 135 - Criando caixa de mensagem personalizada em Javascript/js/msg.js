@@ -101,3 +101,5 @@ class Cxmsg {
         this.divmsg.remove()
     }
 }
+
+export { Cxmsg }
