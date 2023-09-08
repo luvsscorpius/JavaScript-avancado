@@ -12,23 +12,22 @@ class login {
     //https://loginv1.luvsscorpius.repl.co/?matricula=123&senha=321
 
 
-    static login = (mat, pass, config = null) => {
+    static login = (config = null) => {
         if (config != null) {
             this.config = config
         }
 
-        this.endPoint += `?matricula=${mat}&senha=${pass}`
 
         this.styleCSS =
             ".fundoLogin {display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.75); box-sizing: border-box; }" +
             ".baseLogin {display: flex; justify-content: center; align-items: stretch; width: 50%; box-sizing: inherit;}" +
             ".elementosLogin {display: flex; justify-content: center; flex-direction: column; align-items: center; width: 50%; background-color: #eee; padding: 10px; border-radius: 10px 0px 0px 10px; box-sizing: inherit;}" +
-            ".logoLogin img {display: flex; justify-content: center; align-items: center; background-color: #bbb; width: 200px; padding: 10px border-radius: 0px 10px 10px 0px; box-sizing: inherit;}" +
+            ".logoLogin img {display: flex; justify-content: center; align-items: center; background-color: #bbb; width: 200px; padding: 10px; border-radius: 0px 10px 10px 0px; box-sizing: inherit;}" +
             ".campoLogin {display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; box-sizing: inherit; margin-bottom: 10px;}" +
             ".campoLogin label {font-size: 18px; }" +
             ".campoLogin input {font-size: 18px; padding: 5px; background-color: #fff; border-radius: 5px;}" +
             ".botoesLogin {display: flex; justify-content: space-evenly; align-items: center; width: 100%; box-sizing: inherit;}" +
-            `.botoesLogin button {cursor: pointer;background-color: ${this.config}; color: #fff; border-radius: 5px; padding: 10px; width: 100px; box-sizing: inherit;}`
+            `.botoesLogin button {cursor: pointer;background-color:#${this.config.cor}; color: #fff; border-radius: 5px; padding: 10px; width: 100px; box-sizing: inherit;}`
 
         const linkStyle = document.createElement('style')
         linkStyle.setAttribute('id', 'styleLogin')
@@ -95,11 +94,21 @@ class login {
         const btnLogin = document.createElement('button')
         btnLogin.setAttribute('id', 'btnLogin')
         btnLogin.innerHTML = "Login"
+        btnLogin.addEventListener('click', (e) => {
+            if (this.verificarLogin()) {
+                this.fechar()
+            } else {
+                console.log("o")
+            }
+        })
         botoesLogin.appendChild(btnLogin)
 
         const btnCancelar = document.createElement('button')
         btnCancelar.setAttribute('id', 'btnCancelar')
         btnCancelar.innerHTML = "Cancelar"
+        btnCancelar.addEventListener('click', (e) => {
+            this.fechar()
+        })
         botoesLogin.appendChild(btnCancelar)
 
         const logoLogin = document.createElement('div')
@@ -109,7 +118,7 @@ class login {
 
         const imgLogoLogin = document.createElement('img')
         imgLogoLogin.setAttribute('src', this.config.img)
-        imgLogoLogin.setAttribute('title', 'google')
+        imgLogoLogin.setAttribute('title', 'Google')
         logoLogin.appendChild(imgLogoLogin)
 
 
@@ -127,6 +136,23 @@ class login {
                     console.log("Usuário não encontrado")
                 }
             })
+    }
+
+    static fechar = () => {
+        const fundoLogin = document.querySelector('#fundoLogin')
+        fundoLogin.remove()
+        const styleLogin = document.querySelector('#styleLogin')
+        styleLogin.remove()
+    }
+
+    static verificarLogin = () => {
+        const mat = document.querySelector('#inputUsername').value
+        const pass = document.querySelector('#inputSenha').value
+        if (mat == "123" && pass == "321") {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
