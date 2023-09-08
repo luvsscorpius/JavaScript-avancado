@@ -17,7 +17,6 @@ class login {
             this.config = config
         }
 
-
         this.styleCSS =
             ".fundoLogin {display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.75); box-sizing: border-box; }" +
             ".baseLogin {display: flex; justify-content: center; align-items: stretch; width: 50%; box-sizing: inherit;}" +
@@ -95,11 +94,7 @@ class login {
         btnLogin.setAttribute('id', 'btnLogin')
         btnLogin.innerHTML = "Login"
         btnLogin.addEventListener('click', (e) => {
-            if (this.verificarLogin()) {
-                this.fechar()
-            } else {
-                console.log("o")
-            }
+            this.verificarLogin()
         })
         botoesLogin.appendChild(btnLogin)
 
@@ -120,22 +115,6 @@ class login {
         imgLogoLogin.setAttribute('src', this.config.img)
         imgLogoLogin.setAttribute('title', 'Google')
         logoLogin.appendChild(imgLogoLogin)
-
-
-        fetch(this.endPoint)
-            .then(res => res.json())
-            .then(res => {
-                if (res) {
-                    this.logado = true
-                    this.matlogado = true;
-                    this.nomelogado = res.nome;
-                    this.acessologado = res.acesso;
-
-                    console.log(res)
-                } else {
-                    console.log("Usuário não encontrado")
-                }
-            })
     }
 
     static fechar = () => {
@@ -148,11 +127,32 @@ class login {
     static verificarLogin = () => {
         const mat = document.querySelector('#inputUsername').value
         const pass = document.querySelector('#inputSenha').value
-        if (mat == "123" && pass == "321") {
-            return true
-        } else {
-            return false
-        }
+
+        const endPoint = `https://loginv1.luvsscorpius.repl.co/?matricula=${mat}&senha=${pass}`
+
+        fetch(endPoint)
+            .then(res => res.json())
+            .then(res => {
+                if (res) {
+                    this.logado = true
+                    this.matlogado = mat;
+                    this.nomelogado = res.nome;
+                    this.acessologado = res.acesso;
+                    this.fechar()
+                } else {
+                    this.logado = false
+                    this.matlogado = null;
+                    this.nomelogado = null;
+                    this.acessologado = null;
+                    alert("Login não efetuado! Username ou Senha inválidos.")
+                }
+            })
+
+        // if (mat == "123" && pass == "321") {
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
 }
 
