@@ -42,6 +42,20 @@ const dataGridView = (configDataGridView) => {
                 const imgView = document.createElement('img')
                 imgView.classList.add('dataGridViewIcone')
                 imgView.setAttribute("src", "./img/view.svg")
+                imgView.addEventListener('click', (e) => {
+                    document.querySelector('.janelaView').classList.remove('ocultar')
+                    const id = e.target.parentNode.parentNode.firstChild.innerHTML;
+                    const endPoint = `http://127.0.0.1:1880/produto/${id}`;
+
+                    fetch(endPoint)
+                        .then(res => res.json())
+                        .then(res => {
+                            document.querySelector('.id').value = res[0].id
+                            document.querySelector('.produto').value = res[0].produto
+                            document.querySelector('.marca').value = res[0].marca
+                            document.querySelector('.modelo').value = res[0].modelo
+                        })
+                })
                 c5.appendChild(imgView)
 
                 const imgEdit = document.createElement('img')
@@ -74,3 +88,6 @@ const dataGridView = (configDataGridView) => {
 }
 
 dataGridView(configDataGridView)
+document.querySelector('.btn').addEventListener('click', (e) => {
+    document.querySelector('.janelaView').classList.add('ocultar')
+})
