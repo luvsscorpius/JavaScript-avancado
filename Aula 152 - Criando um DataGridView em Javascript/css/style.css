@@ -41,6 +41,20 @@
     flex-direction: row;
 }
 
+.dataGridViewLinha:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.dataGridViewLinha:nth-child(even) {
+    background-color: #eee;
+}
+
+.dataGridViewLinha:hover {
+    background-color: #088 !important;
+    cursor: pointer;
+    color: #fff !important;
+}
+
 .c1 {
     width: 50px;
 }
