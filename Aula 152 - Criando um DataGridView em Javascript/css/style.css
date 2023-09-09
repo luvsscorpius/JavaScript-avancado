@@ -81,3 +81,57 @@
     width: 100px;
     justify-content: space-around !important;
 }
+
+/* Modal de view */
+
+.janelaView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.view {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #aaa;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+}
+
+.campo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 500px;
+}
+
+.campo input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 95%;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.btn {
+    background-color: #480;
+    color: #eee;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
