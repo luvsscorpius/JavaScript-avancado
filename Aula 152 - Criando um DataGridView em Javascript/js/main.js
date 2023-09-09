@@ -1,6 +1,6 @@
 
 const configDataGridView = {
-    endPoint: "./js/produtos.json",
+    endPoint: "http://127.0.0.1:1880/produtos",
     idDestino: "#dataGridViewDados"
 }
 
@@ -10,6 +10,7 @@ const dataGridView = (configDataGridView) => {
     fetch(configDataGridView.endPoint)
         .then(res => res.json())
         .then(res => {
+            console.log(res)
             res.forEach(el => {
                 const dataGridViewLinha = document.createElement('div')
                 dataGridViewLinha.classList.add('dataGridViewLinha')
@@ -51,12 +52,24 @@ const dataGridView = (configDataGridView) => {
                 const imgDelete = document.createElement('img')
                 imgDelete.classList.add('dataGridViewIcone')
                 imgDelete.setAttribute("src", "./img/trash.svg")
+                imgDelete.addEventListener("click", (evt) => {
+                    const id = evt.target.parentNode.parentNode.firstChild.innerHTML;
+                    const linha = evt.target.parentNode.parentNode;
+                    const endpoint = `http://127.0.0.1:1880/removeprodutos/${id}`;
+                    fetch(endpoint)
+                        .then(res => {
+                            if (res.status == 200) {
+                                linha.remove();
+                            } else {
+                                console.log(res)
+                            }
+                        })
+                })
                 c5.appendChild(imgDelete)
 
                 dataGridViewDados.appendChild(dataGridViewLinha)
 
             })
-            console.log(res)
         })
 }
 
