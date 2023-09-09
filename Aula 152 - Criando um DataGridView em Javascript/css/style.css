@@ -55,6 +55,12 @@
     color: #fff !important;
 }
 
+.coluna {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .c1 {
     width: 50px;
 }
@@ -73,4 +79,5 @@
 
 .c5 {
     width: 100px;
+    justify-content: space-around !important;
 }
