@@ -61,6 +61,20 @@ const dataGridView = (configDataGridView) => {
                 const imgEdit = document.createElement('img')
                 imgEdit.classList.add('dataGridViewIcone')
                 imgEdit.setAttribute("src", "./img/edit.svg")
+                imgEdit.addEventListener('click', (e) => {
+                    document.querySelector('#janelaEditar').classList.remove('ocultar')
+                    const id = e.target.parentNode.parentNode.firstChild.innerHTML;
+                    const endPoint = `http://127.0.0.1:1880/produto/${id}`;
+
+                    fetch(endPoint)
+                        .then(res => res.json())
+                        .then(res => {
+                            document.querySelector("#idEditar").value = res[0].id;
+                            document.querySelector("#produtoEditar").value = res[0].produto;
+                            document.querySelector("#marcaEditar").value = res[0].marca;
+                            document.querySelector("#modeloEditar").value = res[0].modelo;
+                        })
+                })
                 c5.appendChild(imgEdit)
 
                 const imgDelete = document.createElement('img')
@@ -91,3 +105,32 @@ dataGridView(configDataGridView)
 document.querySelector('.btn').addEventListener('click', (e) => {
     document.querySelector('.janelaView').classList.add('ocultar')
 })
+
+const btnAtualizar = document.querySelector('#btnAtualizar')
+
+btnAtualizar.addEventListener('click', (e) => {
+    const id = document.querySelector("#idEditar").value;
+    const produto = document.querySelector("#produtoEditar").value;
+    const marca = document.querySelector("#marcaEditar").value;
+    const modelo = document.querySelector("#modeloEditar").value;
+    const endPoint = `http://127.0.0.1:1880/updateprodutos/${id}/${produto}/${marca}/${modelo}`;
+
+    fetch(endPoint)
+        .then(res => {
+            if (res.status == 200) {
+                document.querySelector('#janelaEditar').classList.add('ocultar')
+                dataGridView(configDataGridView)
+                console.log("teste")
+            } else {
+                alert("Erro ao atualizar")
+                console.log(res)
+            }
+        })
+})
+
+const btnFechar = document.querySelector('#btnFechar')
+
+btnFechar.addEventListener('click', (e) => {
+    document.querySelector('#janelaEditar').classList.add('ocultar')
+})
+
