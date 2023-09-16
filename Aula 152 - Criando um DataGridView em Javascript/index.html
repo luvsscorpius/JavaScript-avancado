@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 152 de JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="dataGridViewProdutos" class="dataGridView">
+
+        <div id="dataGridViewTitulos" class="dataGridViewTitulos">
+            <div class="c1">ID</div>
+            <div class="c2">Produto</div>
+            <div class="c3">Marca</div>
+            <div class="c4">Modelo</div>
+            <div class="c5">Funções</div>
+        </div>
+
+        <div id="dataGridViewDados" class="dataGridViewDados">
+        </div>
+
+    </div>
+
+    <div id="janelaView" class="janelaView ocultar">
+        <div id="view" class="view">
+            <div class="campo">
+                <label>ID</label>
+                <input type="text" name="id" id="id" class="id" readonly>
+            </div>
+            <div class="campo">
+                <label>Produto</label>
+                <input type="text" name="produto" id="produto" class="produto" readonly>
+            </div>
+            <div class="campo">
+                <label>Marca</label>
+                <input type="text" name="marca" id="marca" class="marca" readonly>
+            </div>
+            <div class="campo">
+                <label>Modelo</label>
+                <input type="text" name="modelo" id="modelo" class="modelo" readonly>
+            </div>
+            <div id="campo" class="campo rodape">
+                <button id="btnFecharView" class="btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="janelaEditar" class="janelaView ocultar">
+        <div id="editar" class="view">
+            <div class="campo">
+                <label>ID</label>
+                <input type="text" name="id" id="idEditar" class="id" readonly>
+            </div>
+            <div class="campo">
+                <label>Produto</label>
+                <input type="text" name="produto" id="produtoEditar" class="produto">
+            </div>
+            <div class="campo">
+                <label>Marca</label>
+                <input type="text" name="marca" id="marcaEditar" class="marca">
+            </div>
+            <div class="campo">
+                <label>Modelo</label>
+                <input type="text" name="modelo" id="modeloEditar" class="modelo">
+            </div>
+            <div class="campo rodape">
+                <button id="btnAtualizar" class="btn">Atualizar</button>
+                <button id="btnFechar" class="btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

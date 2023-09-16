@@ -14,7 +14,18 @@ const computador = {
 // Adicionar propriedade
 computador['Monitor'] = '22pol'
 computador.placeVideo = 'rtx'
-console.log(computador['Monitor'])
+
+// Associação de objetos
+const c1 = Object.assign({}, computador)
+c1.info()
+
+const o1 = { obj1: '1' }
+const o2 = { obj2: '2' }
+const o3 = { obj3: '3' }
+
+// Dessa maneira abaixo ele mescla os objetos.
+const o4 = Object.assign(o1, o2, o3)
+console.log(o4)
 
 // Podemos criar um array de objetos literais
 const computadores = [
@@ -42,7 +53,6 @@ const computadores = [
 // objetos.innerHTML = JSON.stringify(computadores)
 
 computadores.forEach((c) => {
-    console.log(c)
     const div = document.createElement('div')
     div.classList.add('computador')
     div.innerHTML = c.cpu + "<br/>" + c.ram + "<br/>" + c.hd
